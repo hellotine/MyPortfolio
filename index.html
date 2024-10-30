@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristine Jabson</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #2E3840;
+            padding: 10px;
+        }
+
+        header {
+            background-color: #191825;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 20px; 
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a.active {
+            color: #1D9AFF;
+        }
+
+        .menu-toggle {
+            display: none; 
+            cursor: pointer; 
+            color: white; 
+            font-size: 24px; 
+        }
+
+        main {
+            width: 100%;
+            max-width: 100%;
+            margin-top: 50px;
+        }
+
+        #myself {
+            margin: 10px;
+            display: flex;
+            float: right;
+            align-items: right;
+        }
+
+        #side-text {
+            margin-top: 10%;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        #side-text h3 {
+            font-size: 25px;
+        }
+
+        #side-text h1 {
+            font-size: 40px;
+            color: #1D9AFF;
+        }
+
+        #side-text h4 {
+            font-size: 20px;
+        }
+
+        #side-text p {
+            text-align: left;
+            font-size: 15px;
+        }
+
+        #socials {
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            align-items: left;
+            margin-top: 20px;
+            margin-left: 60px;
+        }
+
+        a {
+            display: flex;
+            margin: 10px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .button {
+            border-color: #1D9AFF;
+            background-color: #1D9AFF;
+            border-style: none;
+            float: left;
+            margin-top: 10px;
+            margin-left: 78px;
+            padding: 10px 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #666;
+            border-color: #1D9AFF;
+        }
+		@media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background-color: #191825;
+                right: 0;
+                top: 60px;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav ul.show {
+                display: flex;
+                max-height: 200px;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div> 
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="portfolio.html" >Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="myself">
+            <img src="mypic.png" alt="fb" width="320px" height="320px">
+        </section>
+
+        <section id="side-text">
+            <h3>Hi, I'm</h3>
+            <h1>Kristine Jabson</h1>
+            <h3>Software Developer</h3>
+            <p>I'm very passionate and dedicated to my work</p>
+        </section>
+        <section id="socials">
+            <a href="https://www.facebook.com/"><img src="fb.png" alt="fb" width="35px" height="35px"></a>
+            <a href="https://www.twitter.com/"><img src="twitter.png" alt="twitter" width="35px" height="35px"></a>
+            <a href="https://www.linkedin.com/"><img src="linkedin.png" alt="linkedin" width="35px" height="35px"></a>
+        </section>
+        <a href="#" class="button">Download CV</a>
+    </main>
+
+	<script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show'); 
+        }
+    </script>
+</body>
+</html>

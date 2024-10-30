@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristine Jabson</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #2E3840;
+            padding: 10px;
+            margin: 0; 
+        }
+
+        header {
+            background-color: #191825;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 20px; 
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a.active {
+            color: #1D9AFF;
+        }
+
+        .menu-toggle {
+            display: none; 
+            cursor: pointer; 
+            color: white; 
+            font-size: 24px; 
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin-top: 120px;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+
+        .skill-card {
+            background-color: #191825;
+            border-radius: 35px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .skill-card h3 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .skill-card p {
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 100%; 
+            height: auto; 
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background-color: #191825;
+                right: 0;
+                top: 60px;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav ul.show {
+                display: flex;
+                max-height: 200px;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div> 
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="grid-container">
+        <div class="skill-card">
+            <h3>HTML</h3>
+            <img src="html.png" alt="html" width="75" height="60">
+            <p>Front-end <br> Markup</p>
+        </div>
+        <div class="skill-card">
+            <h3>CSS</h3>
+            <img src="css.png" alt="css" width="75" height="60">
+            <p>Stylesheets</p>
+        </div>
+        <div class="skill-card">
+            <h3>JavaScript</h3>
+            <img src="javascript.png" alt="javascript" width="75" height="60">
+            <p>Front-end <br> Scripting</p>
+        </div>
+        <div class="skill-card">
+            <h3>Java</h3>
+            <img src="java.png" alt="java" width="65" height="65">
+            <p>Back-end Development</p>
+        </div>
+        <div class="skill-card">
+            <h3>C#</h3>
+            <img src="csharp.png" alt="csharp" width="65" height="65">
+            <p>Desktop & Web Apps</p>
+        </div>
+        <div class="skill-card">
+            <h3>Python</h3>
+            <img src="python.png" alt="python" width="65" height="65">
+            <p>Scripting & Automation</p>
+        </div>
+        <div class="skill-card">
+            <h3>PHP</h3>
+            <img src="php.png" alt="php" width="70" height="65">
+            <p>Web Development</p>
+        </div>
+        <div class="skill-card">
+            <h3>MySQL</h3>
+            <img src="sql.png" alt="sql" width="65" height="65">
+            <p>Database Management</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show'); 
+        }
+    </script>
+</body>
+</html>
